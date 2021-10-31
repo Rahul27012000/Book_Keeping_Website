@@ -6,12 +6,9 @@ import Loading from '../Loading/Loading';
 
 const BookDetail = ({ history }) => {
   const { id } = useParams();
-
   //Get the book details and fill it in the form
   const bookDetails = useSelector(state => state.bookDetails);
-
   const { book, loading } = bookDetails;
-
   const [category, setCategory] = useState(book && !loading && book.category);
   const [title, setTitle] = useState(book && !loading && book.title);
   const [author, setAuthor] = useState(book && book.author);
@@ -55,7 +52,7 @@ const BookDetail = ({ history }) => {
                     </select>
                   </div>
                   <div className='form-group'>
-                    <label htmlFor='exampleInputEmail1'>Author </label>
+                    <label htmlFor='exampleInputEmail1'>Author</label>
                     <input
                       value={author}
                       onChange={e => setAuthor(e.target.value)}

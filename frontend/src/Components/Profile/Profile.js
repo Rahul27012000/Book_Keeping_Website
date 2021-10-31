@@ -13,11 +13,7 @@ const Profile = ({ history }) => {
     dispatch(getUserProfile());
   }, [dispatch, history]);
 
-  // const userLogin = useSelector(state => state.userDetails);
-  // const { userInfo } = userLogin;
-  // useEffect(() => {
-  //   if (userInfo === null) history.push('/login');
-  // }, [userInfo, history]);
+
 
   const userProfile = useSelector(state => state.userProfile);
   const { loading, user, error } = userProfile;
@@ -55,7 +51,7 @@ const Profile = ({ history }) => {
                         </td>
                         <td>
                           
-                        <Link to={`/books/${book && book._id}`}>
+                        <Link to={`/book/${book && book._id}`}>
                             <i
                               className='far fa-edit'
                               style={{
